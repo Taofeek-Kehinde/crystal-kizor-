@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #EFEFEF;
+  --color-ink: #1A1614;
+  --color-cocoa: #3E2A20;
+  --color-sand: #C9B29B;
+  --color-clay: #8B5E3C;
+  --color-ember: #B4531F;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  user-select: none;
+  background: #EFEFEF;
+  color: #1A1614;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: -0.01em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #EFEFEF; }
+::-webkit-scrollbar-thumb { background: #3E2A20; border-radius: 8px; }
+
+/* Swiper overrides */
+.swiper-pagination-bullet {
+  background: #3E2A20 !important;
+  opacity: 0.3 !important;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #B4531F !important;
+}
+
+/* Grain texture overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Custom text-shadow utilities (v4 doesn't ship these by default) */
+.text-shadow-sm { text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.text-shadow { text-shadow: 0 2px 6px rgba(0,0,0,0.35); }
+.text-shadow-lg { text-shadow: 0 4px 16px rgba(0,0,0,0.45); }
+
+/* Watch / tiny screen adjustments */
+@media (max-width: 320px) {
+  h1 { font-size: 1.75rem !important; line-height: 1.15 !important; }
+  h2 { font-size: 1.5rem !important; }
+  .text-shadow-lg { text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+  section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+  .px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+}
