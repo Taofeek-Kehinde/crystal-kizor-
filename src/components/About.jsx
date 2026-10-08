@@ -34,6 +34,13 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <motion.img
+              src="/images/Crystal Kizor Logo Collection.png"
+              alt="Crystal Kizor logo collection"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="w-full max-w-md h-auto mb-6 rounded-xl bg-white/70 p-4 shadow-md border border-ink/5"
+            />
             <p className="text-xs uppercase tracking-[0.4em] text-ember mb-4 text-shadow-sm">
               About Crystal
             </p>

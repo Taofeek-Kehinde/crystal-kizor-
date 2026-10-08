@@ -31,9 +31,14 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a
           href="#top"
-          className="font-display text-2xl tracking-[0.2em] text-ink text-shadow-sm"
+          className="group flex items-center"
+          aria-label="Crystal Kizor home"
         >
-          CRYSTAL KIZOR
+          <img
+            src="/images/Crystal Kizor Logo Collection.png"
+            alt="Crystal Kizor"
+            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
         </a>
 
         <ul className="hidden md:flex items-center gap-10">
